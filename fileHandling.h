@@ -18,6 +18,8 @@ void fileWrite(int eventID,string title,string description,string date,string ti
     out.close();
 }
 
+// void fileRead()
+
 
 
 #endif //FILEHANDLING_H_INCLUDING

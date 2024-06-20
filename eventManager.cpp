@@ -1,4 +1,7 @@
 #include "eventNode.cpp"
+//#include<cstdlib>
+#include<chrono>
+#include<random>
 // Linked list class
 class EventManager {
 private:
@@ -41,13 +44,13 @@ public:
         else{
             cout<<"All Events Are : \n";
             while (current) {
-                cout << "Event ID     : " << current->event.getEventID() << endl;
-                cout << "Title        : " << current->event.getTitle() << endl;
-                cout << "Description  : " << current->event.getDescription() << endl;
-                cout << "Date         : " << current->event.getDate() << endl;
-                cout << "Time         : " << current->event.getTime() << endl;
-                cout << "Location     : " << current->event.getLocation() << endl;
-                cout << "Attendees    : ";
+                cout << "Event ID       : " << current->event.getEventID() << endl;
+                cout << "Title          : " << current->event.getTitle() << endl;
+                cout << "Description    : " << current->event.getDescription() << endl;
+                cout << "Date           : " << current->event.getDate() << endl;
+                cout << "Time           : " << current->event.getTime() << endl;
+                cout << "Location       : " << current->event.getLocation() << endl;
+                cout << "Attendees      : ";
                 cout << endl << "-----------------------------" << endl;
                 current = current->next;
             }
@@ -61,13 +64,13 @@ public:
         while (current!=NULL) {
             if (current->event.getTitle() == title) {
                 cout << "Event found:" << endl;
-                cout << "Event ID: " << current->event.getEventID() << endl;
-                cout << "Title: " << current->event.getTitle() << endl;
-                cout << "Description: " << current->event.getDescription() << endl;
-                cout << "Date: " << current->event.getDate() << endl;
-                cout << "Time: " << current->event.getTime() << endl;
-                cout << "Location: " << current->event.getLocation() << endl;
-                cout << "Attendees: ";
+                cout << "Event ID    : " << current->event.getEventID() << endl;
+                cout << "Title       : " << current->event.getTitle() << endl;
+                cout << "Description : " << current->event.getDescription() << endl;
+                cout << "Date        : " << current->event.getDate() << endl;
+                cout << "Time        : " << current->event.getTime() << endl;
+                cout << "Location    : " << current->event.getLocation() << endl;
+                cout << "Attendees   : ";
                 // for (const auto& attendee : current->event.getAttendees()) {
                 //     cout << attendee << ", ";
                 // }
@@ -132,39 +135,33 @@ public:
         return 0;
     }
 
-    // Function to create id numbers for events
-    int createId(){
-        EventNode* current = head;
-        bool found = false;
-        int number =1;
-        int id;
-        while(current){
-            if(current->next ==NULL){
-                id=number+1;
-                break;
-            }
-            current = current->next;
-            number++;
-        }
-        return id;
-    }
     // Function to create event Node 
     Event createEvent(){ //O(1)
         Event ev;
         int id; string t; string desc; string d; string time; string loc;
-        id = createId();
+
+        auto timeNow = std::chrono::system_clock::now().time_since_epoch().count();
+
+        // Using the time as a seed for the random number generator
+        mt19937 generator(timeNow);
+
+        // Defining the range for the random number
+        uniform_int_distribution<int> distribution(10000, 90000);
+
+        // Generating a unique random number
+        id = distribution(generator);
+        
         ev.setId(id);
         cout<<"Your Event ID           : "<<id<<endl;
         cin.ignore(numeric_limits<streamsize>::max(),'\n');
         cout<<"\nEnter Event Title       : ";
         getline(cin, t);
         ev.setTitle(t);
-        //cin.ignore(numeric_limits<streamsize>::max(),'\n');
-    
+        
         cout<<"\nEnter Event Description : ";
         getline(cin, desc);
         ev.setDescription(desc);
-        //cin.ignore(numeric_limits<streamsize>::max(),'\n');
+        
 
         cout<<"\nEnter Event Date        : ";
         cin>>d;
@@ -175,11 +172,11 @@ public:
         getline(cin, time);
         ev.setTime(time);
         int result = 1;
-        //cin.ignore(numeric_limits<streamsize>::max(),'\n');
+       
         while(true){
             cout<<"\nEnter Event Location    : ";
             getline(cin, loc); 
-            //loc.erase(remove(loc.begin(), loc.end(), ' '), loc.end());
+            
             result = checkSchedule(loc,id);
             if(result==1){
                 cout<<"SORRY , There is another event on that location .\nPlease Choose Another Venue .:) \n";
