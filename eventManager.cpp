@@ -314,6 +314,9 @@ public:
     }
     EventNode* findEventByID(int id) {
         EventNode* current = head;
+        if(head==NULL){
+            return NULL;
+        }
         while (current) {
             if (current->event.getEventID() == id) {
                 return current;

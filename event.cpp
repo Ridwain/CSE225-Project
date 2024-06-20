@@ -76,4 +76,23 @@ void addParticipants(string participant){
     }
 }
 
+void removeParticipants(string participant){
+    bool remove = false;
+    for (int i = 0; i < participantsCount; i++) {
+        if (participants[i] == participant) {
+            for (int j = i; j < participantsCount - 1; j++) {
+                participants[j] = participants[j + 1];
+            }
+            --participantsCount;
+            remove = true;
+            cout<<"SuccessFully Removed\n"<<endl;
+            return;
+        }
+    }
+    if(remove == false){
+        cout<<"No Participant Found With this Name . '"<<participant<<"'"<<endl;
+        return;
+    }
+}
+
 };

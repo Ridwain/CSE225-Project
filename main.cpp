@@ -76,6 +76,16 @@ int main()
             int eventID;
             cin>>eventID;
             EventNode* eventNode = eventlist.findEventByID(eventID);
+            if(eventNode==NULL){
+                cout<<"No Event with this ID ."<<endl;
+                cout<<"\nPress '0' to go back to 'Main Menu'"<<endl;
+                int goBack;
+                cin>>goBack;
+                if(goBack==0){
+                    system("clear");
+                    continue;
+                }
+            }
             system("clear");
             cout<<"1. Add Participants \n2.Remove Participants\n";
             int decision;
@@ -98,6 +108,23 @@ int main()
                     continue;
                 }
 
+            } else if(decision==2){
+                cout<<"Enter The Name Of The Participant : ";
+                string name;
+                cin.ignore(numeric_limits<streamsize>::max(),'\n');
+                getline(cin,name);
+                system("clear");
+                eventNode->event.removeParticipants(name);
+                
+
+                
+                cout<<"\nPress '0' to go back to 'Main Menu'"<<endl;
+                int goBack;
+                cin>>goBack;
+                if(goBack==0){
+                    system("clear");
+                    continue;
+                }
             }
             
 
