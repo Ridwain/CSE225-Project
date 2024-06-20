@@ -7,7 +7,7 @@
 class EventManager {
 private:
     EventNode* head;
-    vector<string> attendees;
+    
 
 public:
     EventManager() : head(nullptr) {}
@@ -52,10 +52,11 @@ public:
                 cout << "Time           : " << current->event.getTime() << endl;
                 cout << "Location       : " << current->event.getLocation() << endl;
                 cout << "Attendees      : ";
-                // for (const auto& attendee : current->event.getAttendees()) {
-                //     cout<<"k";
-                //     cout << attendee << ", ";
-                // }
+                //cout<<current->event.getParticipantsCount();
+                for (int i = 0; i < current->event.getParticipantsCount(); i++) {
+                    if(current->event.getParticipants(i)!="")
+                        cout << current->event.getParticipants(i) << ", ";
+                }
                 cout << endl << "-----------------------------" << endl;
                 current = current->next;
             }
@@ -75,10 +76,11 @@ public:
                 cout << "Date        : " << current->event.getDate() << endl;
                 cout << "Time        : " << current->event.getTime() << endl;
                 cout << "Location    : " << current->event.getLocation() << endl;
-                // cout << "Attendees   : ";
-                // for (const auto& attendee : current->event.getAttendees()) {
-                //     cout << attendee << ", ";
-                // }
+                cout << "Attendees   : ";
+                for (int i = 0; i < current->event.getParticipantsCount(); i++) {
+                    if(current->event.getParticipants(i)!="")
+                        cout << current->event.getParticipants(i) << ", ";
+                }
                 cout << endl << "-----------------------------" << endl;
                 found = true;
             }
@@ -310,7 +312,16 @@ public:
         }
 
     }
-
+    EventNode* findEventByID(int id) {
+        EventNode* current = head;
+        while (current) {
+            if (current->event.getEventID() == id) {
+                return current;
+            }
+            current = current->next;
+        }
+        return nullptr;
+    }
     
 
     

@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
-
+const int MAX_PARTICIPANTS = 100;
+int participantsCount=0;
 class Event{
 private:
 int eventID;
@@ -9,11 +10,12 @@ string description;
 string date;
 string time;
 string location;
+string participants[MAX_PARTICIPANTS];
 
 
 public:
 Event() {
-
+    
 }
 Event(int id, string t, string desc, string d, string tme, string loc)
         : eventID(id), title(t), description(desc), date(d), time(tme), location(loc) {};
@@ -54,6 +56,24 @@ void setDate(string d){
 }
 void setLoc(string loc){
     this->location = loc;
+}
+int getParticipantsCount(){
+    return participantsCount;
+}
+string getParticipants(int index) {
+    
+    if(index >= 0 && index < participantsCount) {
+        return participants[index]; 
+    }
+    return "";
+}
+
+void addParticipants(string participant){
+    if(participantsCount<MAX_PARTICIPANTS){
+        participants[participantsCount++]=participant;
+    } else{
+        cout<<"Maximum Limit Reached. Can't Add More ."<<endl;
+    }
 }
 
 };

@@ -72,7 +72,36 @@ int main()
             }     
         }
         else if(choice==6){
-        
+            cout<<"Enter The Event ID : ";
+            int eventID;
+            cin>>eventID;
+            EventNode* eventNode = eventlist.findEventByID(eventID);
+            system("clear");
+            cout<<"1. Add Participants \n2.Remove Participants\n";
+            int decision;
+            cin>>decision;
+            system("clear");
+            if(decision == 1){
+                cout<<"Enter The Name Of The Participant : ";
+                string name;
+                cin.ignore(numeric_limits<streamsize>::max(),'\n');
+                getline(cin,name);
+                eventNode->event.addParticipants(name);
+                system("clear");
+
+                cout<<"SuccessFully Added\n"<<endl;
+                cout<<"\nPress '0' to go back to 'Main Menu'"<<endl;
+                int goBack;
+                cin>>goBack;
+                if(goBack==0){
+                    system("clear");
+                    continue;
+                }
+
+            }
+            
+
+            
         }
         cout<<"\n";
     }
