@@ -71,6 +71,9 @@ int main()
                 continue;
             }     
         }
+        else if(choice==6){
+        
+        }
         cout<<"\n";
     }
     

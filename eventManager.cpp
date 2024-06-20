@@ -1,12 +1,13 @@
 #include "eventNode.cpp"
-//#include<cstdlib>
 #include<chrono>
 #include<random>
+#include "fileHandling.h"
+
 // Linked list class
 class EventManager {
 private:
     EventNode* head;
-    
+    vector<string> attendees;
 
 public:
     EventManager() : head(nullptr) {}
@@ -20,7 +21,7 @@ public:
             current = next;
         }
     }
-
+    
     // Method to append an event to the linked list
     void appendEvent(Event e) {  // O(n)
         EventNode* newNode = new EventNode(e);
@@ -51,6 +52,10 @@ public:
                 cout << "Time           : " << current->event.getTime() << endl;
                 cout << "Location       : " << current->event.getLocation() << endl;
                 cout << "Attendees      : ";
+                // for (const auto& attendee : current->event.getAttendees()) {
+                //     cout<<"k";
+                //     cout << attendee << ", ";
+                // }
                 cout << endl << "-----------------------------" << endl;
                 current = current->next;
             }
@@ -70,7 +75,7 @@ public:
                 cout << "Date        : " << current->event.getDate() << endl;
                 cout << "Time        : " << current->event.getTime() << endl;
                 cout << "Location    : " << current->event.getLocation() << endl;
-                cout << "Attendees   : ";
+                // cout << "Attendees   : ";
                 // for (const auto& attendee : current->event.getAttendees()) {
                 //     cout << attendee << ", ";
                 // }
@@ -224,6 +229,7 @@ public:
                             string updatedEventTitle;
                             getline(cin, updatedEventTitle);
                             current->event.setTitle(updatedEventTitle);
+                            
                         }
                         else if(option==2){
                             cout<<"Please Enter The Updated Description For Your Event : ";
@@ -245,6 +251,7 @@ public:
                             string updatedEventTime;
                             getline(cin, updatedEventTime); 
                             current->event.setTime(updatedEventTime);
+                            
                         }
                         else if(option==5){
                             int result = 1;
@@ -253,7 +260,6 @@ public:
                             while(true){
                                 cout<<"\nEnter Event Location    : ";
                                 getline(cin, updatedEventLocation); 
-                                //loc.erase(remove(loc.begin(), loc.end(), ' '), loc.end());
                                 result = checkSchedule(updatedEventLocation,choice1);
                                 if(result==1){
                                     cout<<"SORRY , There is another event on that location .\nPlease Choose Another Venue .:) \n";
@@ -278,6 +284,7 @@ public:
                         }
                     }
                     found = true;
+                    updatedFileWrite(current->event.getEventID(),current->event.getTitle(),current->event.getDescription(),current->event.getDate(),current->event.getTime(),current->event.getLocation());
                     break;
                 }
                 current = current->next;
@@ -303,5 +310,8 @@ public:
         }
 
     }
+
+    
+
     
 };

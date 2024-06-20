@@ -1,9 +1,4 @@
-//
-// Created by Ridwain Islam on 19/6/24.
-//
-
 #include<iostream>
-
 using namespace std;
 
 class Event{
@@ -14,6 +9,7 @@ string description;
 string date;
 string time;
 string location;
+
 
 public:
 Event() {
@@ -60,16 +56,4 @@ void setLoc(string loc){
     this->location = loc;
 }
 
-// void Event::addAttendee(string attendee) {
-//         attendees.push_back(attendee);
-// }
-
-// void Event::removeAttendee(string attendee) {
-//     for (auto it = attendees.begin(); it != attendees.end(); ++it) {
-//         if (*it == attendee) {
-//             attendees.erase(it);
-//             break;
-//         }
-//     }
-// }
 };

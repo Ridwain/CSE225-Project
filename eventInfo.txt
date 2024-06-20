@@ -1,35 +1,149 @@
-
-Event ID : 16807
-Event Title : Anatomy
-Event Description : Biology Discussion
-Event Date : 13/02/2025
-Event time : 01:00 PM
+Event ID : 70924
+Event Title : Robotics
+Event Description : Digital AI
+Event Date : 12/12/2024
+Event time : 12:00 PM
 Event Location : AUDI 801
 
-Event ID : 16807
+Event ID : 15509
+Event Title : Robotics
+Event Description : Artificial Intelligence
+Event Date : 12/07/2024
+Event time : 11 AM
+Event Location : AUDI 801
+
+Event ID : 73534
+Event Title : Ridwain
+Event Description : Hello File
+Event Date : 12/12/2020
+Event time : 12:00 PM
+Event Location : AUDI 100
+
+Event ID : 79033
+Event Title : HI
+Event Description : KK
+Event Date : KK
+Event time : KK
+Event Location : KK
+
+Event ID : 85828
+Event Title : Hola
+Event Description : Hi
+Event Date : s
+Event time : s
+Event Location : s
+
+Event ID : 56487
+Event Title : ksk
+Event Description : ss
+Event Date : ss
+Event time : ss
+Event Location : ss
+
+--->Updated<---
+Event ID : 85828
+Event Title : Hola
+Event Description : Hello world
+Event Date : s
+Event time : s
+Event Location : s
+
+Event ID : 20400
+Event Title : Hi
+Event Description : ss
+Event Date : s
+Event time : s
+Event Location : s
+
+--->Updated<---
+Event ID : 20400
 Event Title : Hello World
-Event Description : C Programming
+Event Description : C programming for beginners
 Event Date : 12/12/2024
+Event time : s
+Event Location : s
+
+Event ID : 12204
+Event Title : Hello
+Event Description : ss
+Event Date : s
+Event time : 
+Event Location : ss
+
+Event ID : 30117
+Event Title : hh
+Event Description : aa
+Event Date : aa
+Event time : aa
+Event Location : aa
+
+Event ID : 56994
+Event Title : aa
+Event Description : aa
+Event Date : aa
+Event time : aa
+Event Location : aa
+
+Event ID : 85384
+Event Title : hi
+Event Description : ss
+Event Date : s
+Event time : s
+Event Location : s
+
+Event ID : 61418
+Event Title : ajaj
+Event Description : aa
+Event Date : a
+Event time : a
+Event Location : a
+
+Event ID : 58537
+Event Title : sss
+Event Description : ss
+Event Date : ss
+Event time : ss
+Event Location : ss
+
+Event ID : 49724
+Event Title : ssa
+Event Description : sss
+Event Date : ssss
+Event time : sss
+Event Location : sss
+
+Event ID : 87879
+Event Title : sa
+Event Description : sa
+Event Date : sa
+Event time : sa
+Event Location : sa
+
+Event ID : 29092
+Event Title : Rid
+Event Description : sl
+Event Date : sl
+Event time : sl
+Event Location : sl
+
+Event ID : 79882
+Event Title : aka
+Event Description : a
+Event Date : a
+Event time : a
+Event Location : a
+
+Event ID : 81381
+Event Title : Bikes
+Event Description : Bikers World
+Event Date : 12/12/12
+Event time : 12:00 PM
+Event Location : AUDI 801
+
+Event ID : 48367
+Event Title : Hi
+Event Description : KI kHObor
+Event Date : Bangla
 Event time : 12:10 PM
-Event Location : AUDI 801
+Event Location : AUDI 810
 
-Event ID : 16807
-Event Title : Young Sheldon
-Event Description : Scientists
-Event Date : 12/12/2024
-Event time : 01:10 PM
-Event Location : AUDI 801
-
-Event ID : 16807
-Event Title : Hello World
-Event Description : C Programming
-Event Date : 12/12/2024
-Event time : 12:30 PM
-Event Location : AUDI 801
-
-Event ID : 16807
-Event Title : CSE225
-Event Description : HELLO WORLD
-Event Date : 12/12/2024
-Event time : 12:20 PM
-Event Location : AUDI 801
